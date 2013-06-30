@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xylon.settings.fragments;
+package com.xylon.settings.slim;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -115,7 +115,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
         switch (item.getItemId()) {
             case R.id.reset:
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.PIE_LONG_PRESS_ENABLE, 0);
+                        Settings.System.SPIE_LONG_PRESS_ENABLE, 0);
                 resetPie(3);
                 return true;
             default:
@@ -126,38 +126,38 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
     private void resetPie (int qnty) {
 
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.PIE_BUTTONS_QTY, qnty);
+                        Settings.System.SPIE_BUTTONS_QTY, qnty);
 
                 if (qnty != 5) {
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[0], "**back**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[0], "**back**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[1], "**home**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[1], "**home**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[2], "**recents**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[2], "**recents**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[3], "**null**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[3], "**null**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[4], "**null**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[4], "**null**");
                  } else {
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[0], "**null**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[0], "**null**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[1], "**back**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[1], "**back**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[2], "**home**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[2], "**home**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[3], "**recents**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[3], "**recents**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[4], "**null**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[4], "**null**");
                  }
 
                 for (int i = 0; i < 5; i++) {
                         Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.PIE_LONGPRESS_ACTIVITIES[i], null);
+                                Settings.System.SPIE_LONGPRESS_ACTIVITIES[i], null);
 
                         Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.PIE_CUSTOM_ICONS[i], "");
+                                Settings.System.SPIE_CUSTOM_ICONS[i], "");
                 }
                 refreshSettings();
                 setHasOptionsMenu(true);
@@ -170,7 +170,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
         }
         if (preference == mEnablePieLong) {
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_LONG_PRESS_ENABLE,
+                    Settings.System.SPIE_LONG_PRESS_ENABLE,
                     (Boolean) newValue ? 1 : 0);
 
             refreshSettings();
@@ -179,7 +179,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
         } else if (preference == mPieButtonQty) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_BUTTONS_QTY, val);
+                    Settings.System.SPIE_BUTTONS_QTY, val);
             resetPie(val);
             refreshSettings();
             return true;
@@ -193,24 +193,24 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
                 mPendingPieCustomAction = new PieCustomAction();
                 mPendingPieCustomAction.preference = preference;
                 if (longpress) {
-                    mPendingPieCustomAction.activitySettingName = Settings.System.PIE_LONGPRESS_ACTIVITIES[index];
+                    mPendingPieCustomAction.activitySettingName = Settings.System.SPIE_LONGPRESS_ACTIVITIES[index];
                     mPendingPieCustomAction.iconIndex = -1;
                 } else {
-                    mPendingPieCustomAction.activitySettingName = Settings.System.PIE_CUSTOM_ACTIVITIES[index];
+                    mPendingPieCustomAction.activitySettingName = Settings.System.SPIE_CUSTOM_ACTIVITIES[index];
                     mPendingPieCustomAction.iconIndex = index;
                 }
                 mPicker.pickShortcut();
             } else {
                 if (longpress) {
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_LONGPRESS_ACTIVITIES[index],
+                            Settings.System.SPIE_LONGPRESS_ACTIVITIES[index],
                             (String) newValue);
                 } else {
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES[index],
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES[index],
                             (String) newValue);
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ICONS[index], "");
+                            Settings.System.SPIE_CUSTOM_ICONS[index], "");
                 }
             }
             refreshSettings();
@@ -248,10 +248,10 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
 
                 Settings.System.putString(
                         getContentResolver(),
-                        Settings.System.PIE_CUSTOM_ICONS[mPendingIconIndex], "");
+                        Settings.System.SPIE_CUSTOM_ICONS[mPendingIconIndex], "");
                 Settings.System.putString(
                         getContentResolver(),
-                        Settings.System.PIE_CUSTOM_ICONS[mPendingIconIndex],
+                        Settings.System.SPIE_CUSTOM_ICONS[mPendingIconIndex],
                         Uri.fromFile(
                                 new File(getActivity().getApplicationContext().getFilesDir(), iconName)).getPath());
 
@@ -293,10 +293,10 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
         mPieButtonQty = (ListPreference) findPreference(PREF_PIE_QTY);
         mPieButtonQty.setOnPreferenceChangeListener(this);
         mPieButtonQty.setValue(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.PIE_BUTTONS_QTY, 3) + "");
+                Settings.System.SPIE_BUTTONS_QTY, 3) + "");
 
         int pieLong = Settings.System.getInt(mContext.getContentResolver(),
-                     Settings.System.PIE_LONG_PRESS_ENABLE, 0);
+                     Settings.System.SPIE_LONG_PRESS_ENABLE, 0);
 
         mEnablePieLong = (SwitchPreference) findPreference(PREF_PIE_ENABLE_LONG);
         mEnablePieLong.setChecked(pieLong == 1);
@@ -304,7 +304,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
 
 
         int pieQuantity = Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_BUTTONS_QTY, 3);
+                Settings.System.SPIE_BUTTONS_QTY, 3);
 
         PreferenceGroup targetGroup = (PreferenceGroup) findPreference(PREF_PIE_BUTTONS);
         targetGroup.removeAll();
@@ -328,7 +328,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
             targetGroup.addPreference(pAction);
 
             String uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ACTIVITIES[index]);
+                    Settings.System.SPIE_CUSTOM_ACTIVITIES[index]);
 
             if (uri == null) {
                 pAction.setValue("**null**");
@@ -352,7 +352,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
                 targetGroup.addPreference(mLongPress);
 
                 String uriLong = Settings.System.getString(getActivity().getContentResolver(),
-                        Settings.System.PIE_LONGPRESS_ACTIVITIES[index]);
+                        Settings.System.SPIE_LONGPRESS_ACTIVITIES[index]);
 
                if (uriLong == null) {
                     mLongPress.setValue("**null**");
@@ -393,7 +393,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
             }
 
             String customIconUri = Settings.System.getString(getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ICONS[i]);
+                    Settings.System.SPIE_CUSTOM_ICONS[i]);
             if (customIconUri != null && customIconUri.length() > 0) {
                 File f = new File(Uri.parse(customIconUri).getPath());
                 if (f.exists())
@@ -428,7 +428,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
 
     private Drawable getPieIconImage(int index, boolean landscape) {
         String uri = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.PIE_CUSTOM_ACTIVITIES[index]);
+                Settings.System.SPIE_CUSTOM_ACTIVITIES[index]);
 
         int resId = 0;
         PackageManager pm = mContext.getPackageManager();
@@ -498,10 +498,10 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
         String uri = "";
         if (longpress)
             uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_LONGPRESS_ACTIVITIES[i]);
+                    Settings.System.SPIE_LONGPRESS_ACTIVITIES[i]);
         else
             uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ACTIVITIES[i]);
+                    Settings.System.SPIE_CUSTOM_ACTIVITIES[i]);
         if (uri == null)
             return getResources().getString(R.string.pie_action_none);
 
@@ -549,7 +549,7 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
                     Settings.System
                             .putString(
                                     getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS[mPendingPieCustomAction.iconIndex],
+                                    Settings.System.SPIE_CUSTOM_ICONS[mPendingPieCustomAction.iconIndex],
                                     "");
                 } else {
                     String iconName = getIconFileName(mPendingPieCustomAction.iconIndex);
@@ -563,11 +563,11 @@ public class PieButtonSettings extends SettingsPreferenceFragment implements
                     Settings.System
                             .putString(
                                     getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS[mPendingPieCustomAction.iconIndex], "");
+                                    Settings.System.SPIE_CUSTOM_ICONS[mPendingPieCustomAction.iconIndex], "");
                     Settings.System
                             .putString(
                                     getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS[mPendingPieCustomAction.iconIndex],
+                                    Settings.System.SPIE_CUSTOM_ICONS[mPendingPieCustomAction.iconIndex],
                                     Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
                 }
             }

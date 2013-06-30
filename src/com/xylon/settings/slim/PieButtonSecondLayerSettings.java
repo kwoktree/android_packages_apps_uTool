@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xylon.settings.fragments;
+package com.xylon.settings.slim;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -115,7 +115,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
         switch (item.getItemId()) {
             case R.id.reset:
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.PIE_LONG_PRESS_ENABLE_SECOND_LAYER, 0);
+                        Settings.System.SPIE_LONG_PRESS_ENABLE_SECOND_LAYER, 0);
                 resetPie(5);
                 return true;
             default:
@@ -126,46 +126,46 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
     private void resetPie (int qnty) {
 
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.PIE_BUTTONS_QTY_SECOND_LAYER, qnty);
+                        Settings.System.SPIE_BUTTONS_QTY_SECOND_LAYER, qnty);
 
                 if (qnty != 7) {
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[0], "**menu**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[0], "**menu**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[1], "**notifications**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[1], "**notifications**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[2], "**search**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[2], "**search**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[3], "**screenshot**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[3], "**screenshot**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[4], "**ime**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[4], "**ime**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[5], "**null**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[5], "**null**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[6], "**null**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[6], "**null**");
                  } else {
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[0], "**null**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[0], "**null**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[1], "**menu**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[1], "**menu**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[2], "**notifications**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[2], "**notifications**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[3], "**search**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[3], "**search**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[4], "**screenshot**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[4], "**screenshot**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[5], "**ime**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[5], "**ime**");
                     Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[6], "**null**");
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[6], "**null**");
                  }
 
                 for (int i = 0; i < 7; i++) {
                         Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[i], null);
+                                Settings.System.SPIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[i], null);
 
                         Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[i], "");
+                                Settings.System.SPIE_CUSTOM_ICONS_SECOND_LAYER[i], "");
                 }
                 refreshSettings();
                 setHasOptionsMenu(true);
@@ -179,7 +179,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
         }
         if (preference == mEnablePieLong) {
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_LONG_PRESS_ENABLE_SECOND_LAYER,
+                    Settings.System.SPIE_LONG_PRESS_ENABLE_SECOND_LAYER,
                     (Boolean) newValue ? 1 : 0);
 
             refreshSettings();
@@ -188,7 +188,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
         } else if (preference == mPieButtonQty) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_BUTTONS_QTY_SECOND_LAYER, val);
+                    Settings.System.SPIE_BUTTONS_QTY_SECOND_LAYER, val);
             resetPie(val);
             refreshSettings();
             return true;
@@ -202,24 +202,24 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                 mPendingPieCustomAction = new PieCustomAction();
                 mPendingPieCustomAction.preference = preference;
                 if (longpress) {
-                    mPendingPieCustomAction.activitySettingName = Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index];
+                    mPendingPieCustomAction.activitySettingName = Settings.System.SPIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index];
                     mPendingPieCustomAction.iconIndex = -1;
                 } else {
-                    mPendingPieCustomAction.activitySettingName = Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index];
+                    mPendingPieCustomAction.activitySettingName = Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index];
                     mPendingPieCustomAction.iconIndex = index;
                 }
                 mPicker.pickShortcut();
             } else {
                 if (longpress) {
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index],
+                            Settings.System.SPIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index],
                             (String) newValue);
                 } else {
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index],
+                            Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index],
                             (String) newValue);
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[index], "");
+                            Settings.System.SPIE_CUSTOM_ICONS_SECOND_LAYER[index], "");
                 }
             }
             refreshSettings();
@@ -257,10 +257,10 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
 
                 Settings.System.putString(
                         getContentResolver(),
-                        Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingIconIndex], "");
+                        Settings.System.SPIE_CUSTOM_ICONS_SECOND_LAYER[mPendingIconIndex], "");
                 Settings.System.putString(
                         getContentResolver(),
-                        Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingIconIndex],
+                        Settings.System.SPIE_CUSTOM_ICONS_SECOND_LAYER[mPendingIconIndex],
                         Uri.fromFile(
                                 new File(getActivity().getApplicationContext().getFilesDir(), iconName)).getPath());
 
@@ -302,10 +302,10 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
         mPieButtonQty = (ListPreference) findPreference(PREF_PIE_QTY);
         mPieButtonQty.setOnPreferenceChangeListener(this);
         mPieButtonQty.setValue(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.PIE_BUTTONS_QTY_SECOND_LAYER, 5) + "");
+                Settings.System.SPIE_BUTTONS_QTY_SECOND_LAYER, 5) + "");
 
         int pieLong = Settings.System.getInt(mContext.getContentResolver(),
-                     Settings.System.PIE_LONG_PRESS_ENABLE_SECOND_LAYER, 0);
+                     Settings.System.SPIE_LONG_PRESS_ENABLE_SECOND_LAYER, 0);
 
         mEnablePieLong = (SwitchPreference) findPreference(PREF_PIE_ENABLE_LONG);
         mEnablePieLong.setChecked(pieLong == 1);
@@ -313,7 +313,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
 
 
         int pieQuantity = Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_BUTTONS_QTY_SECOND_LAYER, 5);
+                Settings.System.SPIE_BUTTONS_QTY_SECOND_LAYER, 5);
 
         PreferenceGroup targetGroup = (PreferenceGroup) findPreference(PREF_PIE_BUTTONS);
         targetGroup.removeAll();
@@ -337,7 +337,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
             targetGroup.addPreference(pAction);
 
             String uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index]);
+                    Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index]);
 
             if (uri == null) {
                 pAction.setValue("**null**");
@@ -361,7 +361,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                 targetGroup.addPreference(mLongPress);
 
                 String uriLong = Settings.System.getString(getActivity().getContentResolver(),
-                        Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index]);
+                        Settings.System.SPIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index]);
 
                if (uriLong == null) {
                     mLongPress.setValue("**null**");
@@ -402,7 +402,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
             }
 
             String customIconUri = Settings.System.getString(getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[i]);
+                    Settings.System.SPIE_CUSTOM_ICONS_SECOND_LAYER[i]);
             if (customIconUri != null && customIconUri.length() > 0) {
                 File f = new File(Uri.parse(customIconUri).getPath());
                 if (f.exists())
@@ -437,7 +437,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
 
     private Drawable getPieIconImage(int index, boolean landscape) {
         String uri = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index]);
+                Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index]);
 
         int resId = 0;
         PackageManager pm = mContext.getPackageManager();
@@ -507,10 +507,10 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
         String uri = "";
         if (longpress)
             uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[i]);
+                    Settings.System.SPIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[i]);
         else
             uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[i]);
+                    Settings.System.SPIE_CUSTOM_ACTIVITIES_SECOND_LAYER[i]);
         if (uri == null)
             return getResources().getString(R.string.pie_action_none);
 
@@ -558,7 +558,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                     Settings.System
                             .putString(
                                     getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex],
+                                    Settings.System.SPIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex],
                                     "");
                 } else {
                     String iconName = getIconFileName(mPendingPieCustomAction.iconIndex);
@@ -572,11 +572,11 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                     Settings.System
                             .putString(
                                     getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex], "");
+                                    Settings.System.SPIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex], "");
                     Settings.System
                             .putString(
                                     getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex],
+                                    Settings.System.SPIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex],
                                     Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
                 }
             }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xylon.settings.fragments;
+package com.xylon.settings.slim;
 
 import android.content.ContentResolver;
 import android.database.ContentObserver;
@@ -61,7 +61,7 @@ public class PieControl extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.pie_control);
+        addPreferencesFromResource(R.xml.slim_pie_control);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
@@ -88,28 +88,28 @@ public class PieControl extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mPieControl) {
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_CONTROLS,
+                    Settings.System.SPIE_CONTROLS,
                     (Boolean) newValue ? 1 : 0);
         } else if (preference == mSecondLayer) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.PIE_SECOND_LAYER_ACTIVE, (Boolean) newValue ? 1 : 0);
+                    Settings.System.SPIE_SECOND_LAYER_ACTIVE, (Boolean) newValue ? 1 : 0);
         } else if (preference == mShowSnap) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.PIE_SHOW_SNAP, (Boolean) newValue ? 1 : 0);
+                    Settings.System.SPIE_SHOW_SNAP, (Boolean) newValue ? 1 : 0);
         } else if (preference == mShowText) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.PIE_SHOW_TEXT, (Boolean) newValue ? 1 : 0);
+                    Settings.System.SPIE_SHOW_TEXT, (Boolean) newValue ? 1 : 0);
             if ((Boolean) newValue == false) {
                 Settings.System.putInt(getContentResolver(),
-                        Settings.System.PIE_DISABLE_STATUSBAR_INFO, 0);
+                        Settings.System.SPIE_DISABLE_STATUSBAR_INFO, 0);
                 mDisableStatusBarInfo.setChecked(false);
             }
         } else if (preference == mDisableStatusBarInfo) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.PIE_DISABLE_STATUSBAR_INFO, (Boolean) newValue ? 1 : 0);
+                    Settings.System.SPIE_DISABLE_STATUSBAR_INFO, (Boolean) newValue ? 1 : 0);
         } else if (preference == mShowBackground) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.PIE_SHOW_BACKGROUND, (Boolean) newValue ? 1 : 0);
+                    Settings.System.SPIE_SHOW_BACKGROUND, (Boolean) newValue ? 1 : 0);
         }
         return true;
     }
@@ -119,17 +119,17 @@ public class PieControl extends SettingsPreferenceFragment
         super.onResume();
 
         mPieControl.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_CONTROLS, 0) == 1);
+                Settings.System.SPIE_CONTROLS, 0) == 1);
         mSecondLayer.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_SECOND_LAYER_ACTIVE, 0) == 1);
+                Settings.System.SPIE_SECOND_LAYER_ACTIVE, 0) == 1);
         mShowSnap.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_SHOW_SNAP, 1) == 1);
+                Settings.System.SPIE_SHOW_SNAP, 1) == 1);
         mShowText.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_SHOW_TEXT, 1) == 1);
+                Settings.System.SPIE_SHOW_TEXT, 1) == 1);
         mDisableStatusBarInfo.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_DISABLE_STATUSBAR_INFO, 0) == 1);
+                Settings.System.SPIE_DISABLE_STATUSBAR_INFO, 0) == 1);
         mShowBackground.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_SHOW_BACKGROUND, 1) == 1);
+                Settings.System.SPIE_SHOW_BACKGROUND, 1) == 1);
     }
 
     @Override

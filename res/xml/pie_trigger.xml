@@ -16,12 +16,6 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference
-        style="?android:preferenceInformationStyle"
-        android:title="@string/pie_trigger_note_title"
-        android:summary="@string/pie_trigger_note_summary"
-        android:selectable="false" />
-
     <PreferenceCategory
         android:title="@string/pie_control_trigger_positions">
 
