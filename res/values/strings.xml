@@ -198,6 +198,9 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="quick_launch_shortcuts_summary">Acts like a navigation bar, but without expanded desktop experience and has multiple targets, customization</string>
     <string name="pie_title">Paranoid PIE</string>
     <string name="pie_summary">Controls through your expanded desktop experience</string>
+    <string name="pie_toggle_behavior_title">PIE toggle behavior</string>
+    <string name="pie_toggle_paranoid">Paranoid PIE</string>
+    <string name="pie_toggle_slim">Slim PIE</string>
 
     <!-- Paranoid PIE -->
     <string name="pie_controls_title">Controls</string>
@@ -217,11 +220,15 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="pie_mode_default">Normal (Default)</string>
     <string name="pie_mode_slow">Slow</string>
     <!-- Size -->
-    <string name="pie_size_title">Pie overall size</string>
-    <string name="pie_size_small">Small</string>
-    <string name="pie_size_default">@string/pie_mode_default</string>
-    <string name="pie_size_large">Large</string>
-    <string name="pie_size_gigantic">Gigantic</string>
+    <string name="pie_size_title">Pie size</string>
+    <!-- Angle -->
+    <string name="pie_angle_title">Bottom angle</string>
+    <string name="pie_angle_summary">Adjust the angle between screen\'s edge and pie</string>
+    <string name="pie_angle_none">None</string>
+    <string name="pie_angle_small">Small</string>
+    <string name="pie_angle_normal">Normal (default)</string>
+    <string name="pie_angle_big">Big</string>
+    <string name="pie_angle_huge">Huge</string>
     <!-- Gap -->
     <string name="pie_gap_title">Pie item gap</string>
     <string name="pie_gap_none">None</string>

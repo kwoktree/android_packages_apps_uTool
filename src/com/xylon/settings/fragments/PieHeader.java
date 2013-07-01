@@ -5,8 +5,11 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,12 +20,15 @@ import android.widget.TextView;
 
 import com.xylon.settings.R;
 import com.xylon.settings.SettingsPreferenceFragment;
+import com.xylon.settings.util.Helpers;
 
-public class PieHeader extends SettingsPreferenceFragment {
+public class PieHeader extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String SLIM_PIE = "slim_pie";
     private static final String PARANOID_PIE = "paranoid_pie";
+    private static final String PIE_TOGGLE_BEHAVIOR = "pie_toggle_behavior";
 
+    ListPreference mPieToggle;
     Preference mSlimPie;
     Preference mParanoidPie;
 
@@ -44,7 +50,24 @@ public class PieHeader extends SettingsPreferenceFragment {
         mSlimPie = (Preference) findPreference(SLIM_PIE);
         mParanoidPie = (Preference) findPreference(PARANOID_PIE);
 
+        mPieToggle = (ListPreference) findPreference(PIE_TOGGLE_BEHAVIOR);
+        int pieToggle = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_TOGGLE_BEHAVIOR, 0);
+        mPieToggle.setValue(String.valueOf(pieToggle));
+        mPieToggle.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mPieToggle) {
+            int pieToggle = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_TOGGLE_BEHAVIOR, pieToggle);
+            Helpers.restartSystemUI();
+        }
+        return true;
     }
 
     @Override

@@ -64,6 +64,7 @@ import com.xylon.settings.R;
 import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.Utils;
 import com.xylon.settings.util.Helpers;
+import com.xylon.settings.widgets.SeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -76,6 +77,7 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
     private static final String PIE_MODE = "pie_mode";
     private static final String PIE_SIZE = "pie_size";
     private static final String PIE_TRIGGER = "pie_trigger";
+    private static final String PIE_ANGLE = "pie_angle";
     private static final String PIE_GAP = "pie_gap";
     private static final String PIE_LASTAPP = "pie_lastapp";
     private static final String PIE_MENU = "pie_menu";
@@ -85,8 +87,8 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
 
     SwitchPreference mPieControls;
     ListPreference mPieMode;
-    ListPreference mPieSize;
     ListPreference mPieGravity;
+    ListPreference mPieAngle;
     ListPreference mPieTrigger;
     ListPreference mPieGap;
     CheckBoxPreference mPieMenu;
@@ -94,6 +96,11 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
     CheckBoxPreference mPieSearch;
     CheckBoxPreference mPieCenter;
     CheckBoxPreference mPieStick;
+    SeekBarPreference mPieSize;
+
+    private static final float PIE_SIZE_MIN = 0.7f;
+    private static final float PIE_SIZE_MAX = 1.4f;
+    private static final float PIE_SIZE_DEFAULT = 1.0f;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -119,28 +126,30 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
         mPieMode.setValue(String.valueOf(pieMode));
         mPieMode.setOnPreferenceChangeListener(this);
 
-        mPieSize = (ListPreference) prefSet.findPreference(PIE_SIZE);
         mPieTrigger = (ListPreference) prefSet.findPreference(PIE_TRIGGER);
         try {
-            float pieSize = Settings.System.getFloat(mContext.getContentResolver(),
-                    Settings.System.PIE_SIZE, 0.9f);
-            mPieSize.setValue(String.valueOf(pieSize));
-  
             float pieTrigger = Settings.System.getFloat(mContext.getContentResolver(),
                     Settings.System.PIE_TRIGGER);
             mPieTrigger.setValue(String.valueOf(pieTrigger));
         } catch(Settings.SettingNotFoundException ex) {
             // So what
         }
-
-        mPieSize.setOnPreferenceChangeListener(this);
         mPieTrigger.setOnPreferenceChangeListener(this);
+
+        mPieSize = (SeekBarPreference) prefSet.findPreference(PIE_SIZE);
+        mPieSize.setOnPreferenceChangeListener(this);
 
         mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
         int pieGap = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_GAP, 3);
         mPieGap.setValue(String.valueOf(pieGap));
         mPieGap.setOnPreferenceChangeListener(this);
+
+        mPieAngle = (ListPreference) prefSet.findPreference(PIE_ANGLE);
+        int pieAngle = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_ANGLE, 12);
+        mPieAngle.setValue(String.valueOf(pieAngle));
+        mPieAngle.setOnPreferenceChangeListener(this);
 
         mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
         mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -161,6 +170,12 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
         mPieStick = (CheckBoxPreference) prefSet.findPreference(PIE_STICK);
         mPieStick.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_STICK, 1) == 1);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateValues();
     }
 
     @Override
@@ -198,9 +213,12 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
                     Settings.System.PIE_MODE, pieMode);
             return true;
         } else if (preference == mPieSize) {
-            float pieSize = Float.valueOf((String) newValue);
+            float val = Float.parseFloat((String) newValue);
+            float value = (val * ((PIE_SIZE_MAX - PIE_SIZE_MIN) /
+                100)) + PIE_SIZE_MIN;
             Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.PIE_SIZE, pieSize);
+                    Settings.System.PIE_SIZE,
+                    value);
             return true;
         } else if (preference == mPieGravity) {
             int pieGravity = Integer.valueOf((String) newValue);
@@ -217,7 +235,28 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.PIE_TRIGGER, pieTrigger);
             return true;
+        } else if (preference == mPieAngle) {
+            int pieAngle = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_ANGLE, pieAngle);
+            return true;
         }
         return false;
+    }
+
+    private void updateValues() {
+        float pieSize;
+        try{
+            pieSize = Settings.System.getFloat(getActivity()
+                    .getContentResolver(), Settings.System.PIE_SIZE);
+        } catch (Exception e) {
+            pieSize = PIE_SIZE_DEFAULT;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.PIE_SIZE, pieSize);
+        }
+        float pieSizeValue = ((pieSize - PIE_SIZE_MIN) /
+                    ((PIE_SIZE_MAX - PIE_SIZE_MIN) / 100)) / 100;
+        mPieSize.setInitValue((int) (pieSizeValue * 100));
+        mPieSize.disablePercentageValue(true);
     }
 }

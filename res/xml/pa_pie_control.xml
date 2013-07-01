@@ -31,11 +31,12 @@
             android:dependency="pie_controls" />
 
         <ListPreference
-            android:key="pie_size"
-            android:dialogTitle="@string/pie_size_title"
-            android:title="@string/pie_size_title"
-            android:entries="@array/entries_pie_size"
-            android:entryValues="@array/values_pie_size"
+            android:key="pie_angle"
+            android:dialogTitle="@string/pie_angle_title"
+            android:title="@string/pie_angle_title"
+            android:summary="@string/pie_angle_summary"
+            android:entries="@array/entries_pie_angle"
+            android:entryValues="@array/values_pie_angle"
             android:dependency="pie_controls" />
 
         <ListPreference
@@ -65,6 +66,11 @@
             android:title="@string/pie_center_title"
             android:summary="@string/pie_center_summary"
             android:dependency="pie_controls" />
+
+        <com.xylon.settings.widgets.SeekBarPreference
+             android:key="pie_size"
+             android:title="@string/pie_control_size"
+             android:dependency="pie_controls" />
 
     </PreferenceCategory>
 
