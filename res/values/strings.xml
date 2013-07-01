@@ -223,7 +223,6 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="pie_size_title">Pie size</string>
     <!-- Angle -->
     <string name="pie_angle_title">Bottom angle</string>
-    <string name="pie_angle_summary">Adjust the angle between screen\'s edge and pie</string>
     <string name="pie_angle_none">None</string>
     <string name="pie_angle_small">Small</string>
     <string name="pie_angle_normal">Normal (default)</string>
@@ -241,6 +240,7 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="pie_trigger_normal">Normal (Default)</string>
     <string name="pie_trigger_big">Big</string>
     <string name="pie_trigger_huge">Huge</string>
+    <!-- Misc -->
     <string name="pie_restart_launcher_title">Restart the Launcher</string>
     <string name="pie_restart_launcher_summary">This will restart your launcher, but may have adverse effects on the screen. Some widgets may not look right either. Be careful.</string>
     <string name="pie_menu_title">Persistent menu button</string>
