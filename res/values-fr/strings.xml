@@ -168,6 +168,78 @@
     <string name="lowercase">Minuscules</string>
     <string name="uppercase">Majuscules</string>
 
+    <!-- PIE Control -->
+    <string name="pie_help_title">Aide</string>
+    <string name="pie_help_text"><b>Quelle est la différence entre le Paranoid et le Slim PIE?</b>
+\n\n
+Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, qui remplace la barre de navigation. Le Slim PIE est similaire mais plutôt axé sur la personnalisation des raccourcis, permettant de naviguer mais aussi d'ouvrir des applications définie. Les deux ont des couleurs personnalisables.
+\n\n\n
+<b>Copyright (C) 2013 The Ultimatum Project.</b>
+    </string>
+
+    <string name="quick_launch_shortcuts_title">Slim PIE</string>
+    <string name="quick_launch_shortcuts_summary">Agit comme une barre de navigation sans le Bureau étendu, avec beaucoup de personnalisation</string>
+    <string name="pie_title">Paranoid PIE</string>
+    <string name="pie_summary">Agit comme une barre de navigation pour le Bureau étendu</string>
+
+    <!-- Paranoid PIE -->
+    <string name="pie_controls_title">Contrôles du Pie</string>
+    <string name="enable_pie_title">Activer le PIE™</string>
+    <string name="pie_targets_title">Boutons</string>
+    <!-- The Gravity -->
+    <string name="pie_gravity_title">Emplacement du PIE</string>
+    <string name="pie_gravity_top">En haut</string>
+    <string name="pie_gravity_bottom">En bas</string>
+    <string name="pie_gravity_right">À droite</string>
+    <string name="pie_gravity_left">À gauche</string>
+    <!-- The Mode -->
+    <string name="pie_mode_title">Style du PIE</string>
+    <string name="pie_mode_bare">Boutons uniquement</string>
+    <string name="pie_mode_quick">Rapide</string>
+    <string name="pie_mode_default">Normal</string>
+    <string name="pie_mode_slow">Lent</string>
+    <!-- The Size -->
+    <string name="pie_size_title">Taille du PIE</string>
+    <string name="pie_size_small">Petit</string>
+    <string name="pie_size_default">Normal</string>
+    <string name="pie_size_large">Grand</string>
+    <string name="pie_size_gigantic">Gigantesque</string>
+    <!-- The Gap -->
+    <string name="pie_gap_title">Écart des boutons du PIE</string>
+    <string name="pie_gap_none">Aucun</string>
+    <string name="pie_gap_small">Petit</string>
+    <string name="pie_gap_big">Grand</string>
+    <string name="pie_gap_huge">Énorme</string>
+    <!-- The trigger -->
+    <string name="pie_trigger_title">Taille de zone de déclenchement</string>
+    <string name="pie_trigger_small">Petite</string>
+    <string name="pie_trigger_normal">Normale</string>
+    <string name="pie_trigger_big">Grosse</string>
+    <string name="pie_trigger_huge">Énorme</string>
+    <string name="pie_restart_launcher_title">Redémarrage du lanceur</string>
+    <string name="pie_restart_launcher_summary">Changer la taille de l\'écran peut avoir des effets indésirables. Cette option permet à votre lanceur de redevenir sain en redémarrant seul, et cela ce fait en peu de temps. (Recommandé)</string>
+    <string name="pie_menu_title">Bouton Menu persistant</string>
+    <string name="pie_menu_summary">Toujours afficher le bouton Menu, même lorsqu\'il n\'est pas nécessaire.</string>
+    <string name="pie_search_title">Bouton Recherche</string>
+    <string name="pie_search_summary">Afficher le bouton Recherche dans le PIE</string>
+    <string name="pie_lastapp_title">Bouton Dernière App</string>
+    <string name="pie_lastapp_summary">Afficher le bouton Dernière App dans le PIE, qui permet de revenir rapidement à la dernière application qui a été utilisée</string>
+    <string name="pie_center_title">Centrage</string>
+    <string name="pie_center_summary">Toujours afficher le PIE au milieu de l\'aire d\'activation, plutôt qu\'à l\'endroit où est votre doigt.</string>
+    <string name="pie_stick_title">Empêcher la rotation</string>
+    <string name="pie_stick_summary">Si coché, le PIE restera toujours au même endroit avec n\'importe qu\'elle orientation.</string>
+    <!-- The Colors -->
+    <string name="pie_color_title">Paramètres des couleurs</string>
+    <string name="pie_color_style_title">Couleurs personnalisées</string>
+    <string name="pie_background_title">Couleur d\'arrière-plan</string>
+    <string name="pie_select_title">Couleur de la sélection</string>
+    <string name="pie_outlines_title">Couleur des contours</string>
+    <string name="pie_status_clock_title">Couleur de l\'heure</string>
+    <string name="pie_status_title">Couleur des infos</string>
+    <string name="pie_chevron_left_title">Couleur du chevron gauche</string>
+    <string name="pie_chevron_right_title">Couleur du chevron droit</string>
+    <string name="pie_juice_title">Couleur du niveau de batterie</string>
+
     <!-- SlimPIE -->
     <string name="pie_control_title">PIE Slim</string>
     <string name="pie_control_dialog_title">PIE Slim</string>
