@@ -1143,35 +1143,16 @@
         <item>255</item>
     </string-array>
 
-    <!-- Hidden Statusbar Pulldown -->
-    <string-array name="hidden_statusbar_pulldown_timeout_entries" translatable="false">
-        <item>@string/time_2_5_seconds</item>
-        <item>@string/time_5_seconds</item>
-        <item>@string/time_7_5_seconds</item>
-        <item>@string/time_10_seconds</item>
+    <!-- Statusbar behavior -->
+    <string-array name="status_bar_behaviour_entries" translatable="false">
+        <item>@string/statusbar_show</item>
+        <item>@string/statusbar_hide</item>
+        <item>@string/statusbar_auto</item>
     </string-array>
-    <string-array name="hidden_statusbar_pulldown_timeout_values" translatable="false">
-        <item>2500</item>
-        <item>5000</item>
-        <item>7500</item>
-        <item>10000</item>
-    </string-array>
-
-    <!-- Hidden Statusbar -->
-    <string-array name="hidden_statusbar_entries" translatable="false">
-        <item>@string/statusbar_visible</item>
-        <item>@string/statusbar_hide_title</item>
-        <item>@string/statusbar_notification</item>
-        <item>@string/statusbar_pulldown</item>
-        <item>@string/statusbar_pulldown_notification</item>
-    </string-array>
-
-    <string-array name="hidden_statusbar_values" translatable="false">
+    <string-array name="status_bar_behaviour_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
-        <item>4</item>
     </string-array>
 
     <!-- HALO -->

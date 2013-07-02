@@ -750,15 +750,16 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="statusbar_behaviour">Statusbar Behaviour</string>
     <string name="statusbar_visible">Show Statusbar</string>
 
-    <!-- Hide Status Bar -->
-    <string name="statusbar_hide_title">Hide Statusbar</string>
+    <!-- Statusbar Quick Peek -->
+    <string name="statusbar_quick_peek_title">Quick peek</string>
+    <string name="statusbar_quick_peek_summary">Peek at the statusbar when hidden by swiping down from top edge of screen</string>
 
-    <!-- Hidden Statusbar Pulldown -->
-    <string name="statusbar_hide_summary">Choose from 3 different statusbar behaviour</string>
-    <string name="statusbar_notification">Notifications</string>
-    <string name="statusbar_pulldown">Pulldown Statusbar</string>
-    <string name="statusbar_pulldown_notification">Pulldown &amp; Notifications</string>    <string name="hidden_statusbar_pulldown_timeout_title">Hidden Statusbar Pulldown Timeout</string>
-    <string name="hidden_statusbar_pulldown_timeout_summary">Timeout for hidden Statusbar window</string>
+    <!-- Statusbar behaviour -->
+    <string name="statusbar_behaviour_title">Statusbar behaviour</string>
+    <string name="statusbar_behaviour_summary">Choose from three different statusbar behaviours</string>
+    <string name="statusbar_show">Show statusbar</string>
+    <string name="statusbar_hide">Hide statusbar</string>
+    <string name="statusbar_auto">Auto hide statusbar</string>
 
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Navigation Bar Widgets</string>
