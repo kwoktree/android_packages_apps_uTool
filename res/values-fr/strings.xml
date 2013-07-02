@@ -172,7 +172,7 @@
     <string name="pie_help_title">Aide</string>
     <string name="pie_help_text"><b>Quelle est la différence entre le Paranoid et le Slim PIE?</b>
 \n\n
-Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, qui remplace la barre de navigation. Le Slim PIE est similaire mais plutôt axé sur la personnalisation des raccourcis, permettant de naviguer mais aussi d'ouvrir des applications définie. Les deux ont des couleurs personnalisables.
+Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, qui remplace la barre de navigation. Le Slim PIE est similaire mais plutôt axé sur la personnalisation des raccourcis, permettant de naviguer mais aussi d\'ouvrir des applications définie. Les deux ont des couleurs personnalisables.
 \n\n\n
 <b>Copyright (C) 2013 The Ultimatum Project.</b>
     </string>
@@ -181,6 +181,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="quick_launch_shortcuts_summary">Agit comme une barre de navigation sans le Bureau étendu, avec beaucoup de personnalisation</string>
     <string name="pie_title">Paranoid PIE</string>
     <string name="pie_summary">Agit comme une barre de navigation pour le Bureau étendu</string>
+    <string name="pie_toggle_behavior_title">Interrupteur du PIE</string>
 
     <!-- Paranoid PIE -->
     <string name="pie_controls_title">Contrôles du Pie</string>
@@ -200,10 +201,13 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="pie_mode_slow">Lent</string>
     <!-- The Size -->
     <string name="pie_size_title">Taille du PIE</string>
-    <string name="pie_size_small">Petit</string>
-    <string name="pie_size_default">Normal</string>
-    <string name="pie_size_large">Grand</string>
-    <string name="pie_size_gigantic">Gigantesque</string>
+    <!-- Angle -->
+    <string name="pie_angle_title">Angle en bas du PIE</string>
+    <string name="pie_angle_none">Aucun</string>
+    <string name="pie_angle_small">Petit</string>
+    <string name="pie_angle_normal">Moyen (Par défaut)</string>
+    <string name="pie_angle_big">Grand</string>
+    <string name="pie_angle_huge">Énorme</string>
     <!-- The Gap -->
     <string name="pie_gap_title">Écart des boutons du PIE</string>
     <string name="pie_gap_none">Aucun</string>
@@ -241,8 +245,8 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="pie_juice_title">Couleur du niveau de batterie</string>
 
     <!-- SlimPIE -->
-    <string name="pie_control_title">PIE Slim</string>
-    <string name="pie_control_dialog_title">PIE Slim</string>
+    <string name="pie_control_title">Slim PIE</string>
+    <string name="pie_control_dialog_title">Slim PIE</string>
     <string name="pie_control_always">Toujours affiché</string>
     <string name="pie_control_expanded">Seulement avec le mode bureau étendu</string>
     <string name="pie_control_disabled">Désactivé</string>
