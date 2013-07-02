@@ -161,7 +161,7 @@
     <string name="clock_date_format">Format de la date</string>
     <string name="clock_date_string_edittext_title">Cela doit être du style: dd/MM/yy</string>
     <string name="clock_date_string_edittext_summary">Entrer une valeur</string>
-    <string name="dont_show_default">Ne pas afficher (Par défaut)</string>
+    <string name="dont_show_default">Ne pas afficher</string>
     <string name="normal">Normal</string>
     <string name="small_date">Petite</string>
     <string name="regular_date">Normale</string>
@@ -205,7 +205,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="pie_angle_title">Angle en bas du PIE</string>
     <string name="pie_angle_none">Aucun</string>
     <string name="pie_angle_small">Petit</string>
-    <string name="pie_angle_normal">Moyen (Par défaut)</string>
+    <string name="pie_angle_normal">Moyen</string>
     <string name="pie_angle_big">Grand</string>
     <string name="pie_angle_huge">Énorme</string>
     <!-- The Gap -->
@@ -347,7 +347,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="halo_pause_title">Pause de l\'application</string>
     <string name="halo_pause_summary">En ouvrant une application en pop-up, l\'application en cours sera mise en pause</string>
     <string name="halo_colors_title">Couleurs personnalisées</string>
-    <string name="halo_colors_summary">Utiliser des couleurs personnalisées pour le HALO plutôt que les couleurs d\'origine</string>
+    <string name="halo_colors_summary">Utiliser des couleurs personnalisées plutôt que les couleurs d\'origine</string>
     <string name="halo_circle_color_title">Couleur du cercle</string>
     <string name="halo_bubble_color_title">Couleur de la bulle</string>
     <string name="halo_bubble_text_color_title">Couleur du texte de la bulle</string>
@@ -408,8 +408,8 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="center_clock">Horloge centrée</string>
     <string name="no_clock">Horloge masquée</string>
     <string name="dont_show">Ne pas afficher</string>
-    <string name="small_am_pm">AM/PM Petit</string>
-    <string name="regular_am_pm">AM/PM Normal</string>
+    <string name="small_am_pm">Petit AM/PM</string>
+    <string name="regular_am_pm">Grand AM/PM</string>
     <string name="small_weekday">Jour de la semaine petit</string>
     <string name="regular_weekday">Jour de la semaine normal</string>
 
@@ -569,7 +569,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="cm_sound_mode_vibrate">Vibreur</string>
     <string name="cm_sound_mode_sound">Sonnerie</string>
     <string name="cm_sound_mode_soundVibrate">Sonnerie &amp; Vibreur</string>
-    <string name="pref_flash_mode_title">Mode de Torche</string>
+    <string name="pref_flash_mode_title">Mode de torche</string>
     <string name="expanded_haptic_feedback_title">Retour haptique</string>
     <string name="power_widget_additional_options_cat">Options supplémentaires</string>
     <string name="brightness_location_title">Emplacement du curseur de luminosité</string>
@@ -623,23 +623,27 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="navbar_icon_menu">Icône personnalisé</string>
     <string name="navbar_delete_menu">Supprimer le bouton</string>
     
-    <!-- Hide Status Bar -->
+    <!-- Status Bar Behaviour -->
     <string name="statusbar_behaviour">Comportement de la barre d\'état</string>
     <string name="statusbar_visible">Afficher la barre d\'état</string>
-    <string name="statusbar_hide_title">Masquer la barre d\'état</string>
-    <string name="statusbar_hide_summary">Vous pouvez choisir entre 3 comportements de la barre</string>
-    <string name="statusbar_notification">Notifications seulement</string>
-    <string name="statusbar_pulldown">Mode déroulant</string>
-    <string name="statusbar_pulldown_notification">Notifications &amp; déroulant</string>
-    <string name="hidden_statusbar_pulldown_timeout_title">Délai avant ré-enroulage</string>
-    <string name="hidden_statusbar_pulldown_timeout_summary">Délai pendant lequel la barre d\'état restera affichée</string>
+    
+    <!-- Statusbar Quick Peek -->
+    <string name="statusbar_quick_peek_title">Coup d\'oeil rapide</string>
+    <string name="statusbar_quick_peek_summary">Afficher temporairement la barre d\'état (lorsqu\'elle est masquée) par un swipe vers le bas en haut de l\'écran</string>
+
+    <!-- Statusbar behaviour -->
+    <string name="statusbar_behaviour_title">Comportement de la barre d\'état</string>
+    <string name="statusbar_behaviour_summary">Choisir entre 3 comportements de la barre d\'état</string>
+    <string name="statusbar_show">Barre d\'état affichée</string>
+    <string name="statusbar_hide">Barre d\'état masquée</string>
+    <string name="statusbar_auto">Barre d\'état masquée auto.</string>
 
     <!-- Nav Bar Widgets -->
-    <string name="navbar_widgets">Widgets - Barre de Navigation</string>
+    <string name="navbar_widgets">Widgets - Barre de navigation</string>
     <string name="navbar_widgets_instructions">Swipe pour voir - Appuyer pour choisir</string>
     <string name="navbar_widgets_reset">Réinitialiser les widgets</string>
     <string name="navbar_widget_summary">Widget %1$s sur %2$s</string>
-    <string name="navbar_widget_summary_add">Appuer pour ajouter un Widget</string>
+    <string name="navbar_widget_summary_add">Appuer pour ajouter un widget</string>
     <string name="navbar_widgets_title">Configurer les widgets</string>
     <string name="navbar_widgets_shiftLeft">Maj gauche</string>
     <string name="navbar_widgets_shiftRight">Maj droit</string>
