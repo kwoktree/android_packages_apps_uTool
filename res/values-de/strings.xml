@@ -556,5 +556,28 @@
     <string name="halo_effect_color_title">Effect Farbe</string>
     <string name="halo_effect_color_summary">Benötigt SystemUI Neustart</string>
     
+    <!-- Tile background style and text color -->
+    <string name="tile_background_style_title">Tile Hintergrundstil</string>
+    <string name="tile_background_style_summary">Wähle zwischen zufalls,standart oder farbigen Hintergrund der Tiles</string>
+    <string name="tile_background_color_title">Wähle Tile Hintergrundfarbe</string>
+    <string name="tile_background_pressed_color_title">Wähle die Farbe des gedrückten Tiles</string>
+    <string name="tile_background_random">Zufalls Farben</string>
+    <string name="tile_background_color_fill">Farbfüllung</string>
+    <string name="tile_background_default">standart Hintergrund</string>
+    <string name="tile_custom_background_dialog_title">Tile Hintergrund Stil</string>
+    <string name="tile_text_color_title">Wähle Tile Textfarbe</string>
+
+    <!-- Random colors -->
+    <string name="random_colors">Verschiedene Farben</string>
+    <string name="random_colors_title">Wähle verschiedene Farben</string>
+    <string name="random_colors_summary">Erlaubt es Ihnen eigene Farben für den Zufallsmodus zu wählen</string>
+    <string name="random_colors_reset_title">Reset random colors</string>
+    <string name="color_one">Farbe 1</string>
+    <string name="color_two">Farbe 2</string>
+    <string name="color_three">Farbe 3</string>
+    <string name="color_four">Farbe 4</string>
+    <string name="color_five">Farbe 5</string>
+    <string name="color_six">Farbe 6</string>
+    
     
 </resources>
