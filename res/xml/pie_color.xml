@@ -52,8 +52,7 @@
         android:key="pie_chevron_left"
         android:title="@string/pie_chevron_left_title"
         android:defaultValue="0xf00099cc"
-        android:dependency="pie_enable_color"
-        alphaSlider="true"  />
+        android:dependency="pie_enable_color"  />
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="pie_chevron_right"
