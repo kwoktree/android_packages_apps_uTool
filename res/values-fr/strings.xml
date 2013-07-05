@@ -185,7 +185,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
 
     <!-- Paranoid PIE -->
     <string name="pie_controls_title">Contrôles du Pie</string>
-    <string name="enable_pie_title">Activer le PIE™</string>
+    <string name="enable_pie_title">Paranoid PIE</string>
     <string name="pie_targets_title">Boutons</string>
     <!-- The Gravity -->
     <string name="pie_gravity_title">Emplacement du PIE</string>
@@ -194,13 +194,13 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="pie_gravity_right">À droite</string>
     <string name="pie_gravity_left">À gauche</string>
     <!-- The Mode -->
-    <string name="pie_mode_title">Style du PIE</string>
+    <string name="pie_mode_title">Affichage du PIE</string>
     <string name="pie_mode_bare">Boutons uniquement</string>
     <string name="pie_mode_quick">Rapide</string>
     <string name="pie_mode_default">Normal</string>
     <string name="pie_mode_slow">Lent</string>
     <!-- The Size -->
-    <string name="pie_size_title">Taille du PIE</string>
+    <string name="pie_size_title">Taille globale du PIE</string>
     <!-- Angle -->
     <string name="pie_angle_title">Angle en bas du PIE</string>
     <string name="pie_angle_none">Aucun</string>
@@ -233,7 +233,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="pie_stick_title">Empêcher la rotation</string>
     <string name="pie_stick_summary">Si coché, le PIE restera toujours au même endroit avec n\'importe qu\'elle orientation.</string>
     <!-- The Colors -->
-    <string name="pie_color_title">Paramètres des couleurs</string>
+    <string name="pie_color_title">Modifier les couleurs</string>
     <string name="pie_color_style_title">Couleurs personnalisées</string>
     <string name="pie_background_title">Couleur d\'arrière-plan</string>
     <string name="pie_select_title">Couleur de la sélection</string>
@@ -257,7 +257,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="pie_control_trigger_right">Utiliser le bord droit de l\'écran</string>
     <string name="pie_control_trigger_top">Utiliser le bord du haut de l\'écran</string>
     <string name="pie_control_trigger_top_summary">Le PIE s\'affiche seulement en haut</string>
-    <string name="pie_button_style">Style des boutons</string>
+    <string name="pie_button_style">Couleur des boutons</string>
     <string name="pie_button_color_title">Couleur des boutons</string>
     <string name="pie_button_alpha_title">Transparence des boutons</string>
     <string name="pie_button_outline_color_title">Couleur du contour des boutons</string>
@@ -290,9 +290,9 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="pie_snap_color_title">Couleur des points de bordure</string>
     <string name="pie_text_color_title">Couleur du texte</string>
     <string name="pie_background_alpha_title">Transparence du fond</string>
-    <string name="pie_style">Style et dimensions</string>
-    <string name="pie_style_title">Style</string>
-    <string name="pie_dimens_title">Dimension</string>
+    <string name="pie_style">Couleurs et dimensions</string>
+    <string name="pie_style_title">Couleurs</string>
+    <string name="pie_dimens_title">Dimensions</string>
     <string name="pie_additional_options">Options supplémentaires</string>
     <string name="pie_show_snap_title">Afficher les points de bordure</string>
     <string name="pie_show_snap_summary">Afficher les points de bordure pour changer les bords de déclenchement dynamiquement</string>
@@ -302,21 +302,21 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="pie_disable_statusbar_info_summary">Masquer les informations redondantes de la barre d\'état</string>
     <string name="pie_show_background_title">Voir l\'arrière plan</string>
     <string name="pie_show_background_summary">Activer le fond d\'écran du PIE</string>
-    <string name="menu_pie_style_reset">Réinitialiser le style du PIE</string>
-    <string name="menu_pie_button_style_reset">Réinitialiser le style des boutons</string>
+    <string name="menu_pie_style_reset">Réinitialiser les couleurs du PIE</string>
+    <string name="menu_pie_button_style_reset">Réinitialiser les couleurs des boutons</string>
     <string name="menu_pie_button_reset">Réinitialiser les boutons</string>
-    <string name="pie_qty_title">Quantité des boutons</string>
+    <string name="pie_qty_title">Quantité de boutons</string>
     <string name="pie_qty_summary">Ce changement réinitialisera vos boutons actuels</string>
     <string name="pie_action_title">Icône &amp; action du bouton %1$s</string>
     <string name="pie_longpress_title">Action de l\'appui long sur le bouton %1$s</string>
-    <string name="pie_enable_long">Activer l\'appui long des boutons du PIE</string>
+    <string name="pie_enable_long">Activer l\'appui long</string>
     <string name="pie_button">Boutons</string>
     <string name="pie_button_cat">Boutons</string>
     <string name="pie_buttons_options">Options des boutons</string>
-    <string name="pie_second_layer_title">Deuxième couche de boutons</string>
-    <string name="pie_second_layer_summary">Activer ou désactiver la deuxième couche de boutons</string>
-    <string name="pie_button_second_layer">Boutons de la deuxième couche</string>
-    <string name="pie_button_second_layer_cat">Boutons de la deuxième couche</string>
+    <string name="pie_second_layer_title">Deuxième ligne de boutons</string>
+    <string name="pie_second_layer_summary">Activer ou désactiver la deuxième ligne de boutons</string>
+    <string name="pie_button_second_layer">Boutons de la deuxième ligne</string>
+    <string name="pie_button_second_layer_cat">Boutons de la deuxième ligne</string>
     <string name="pie_mirror_right_title">Inverser le PIE sur la droite</string>
     <string name="pie_mirror_right_summary">Inverser le sens des boutons du PIE sur le bord droit de l\'écran</string>
     <string name="pie_action_custom_app">Application personnalisée</string>
@@ -908,7 +908,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <!-- Lock Screen Interface -->
     <string name="lockscreen_custom_background_title">Fond de l\'écran de verrouillage</string>
     <string name="lockscreen_custom_background_dialog_title">Choisir une couleur</string>
-    <string name="lockscreen_background_result_successful">Fond d\'écran changé avec succès</string>
+    <string name="lockscreen_background_result_successful">Fond d\'écran modifié avec succès</string>
     <string name="lockscreen_background_result_not_successful">Impossible de changer le fond d\écran</string>
     <string name="lockscreen_background_color_fill">Couleur de remplissage</string>
     <string name="lockscreen_background_custom_image">Image personnalisée</string>
@@ -921,7 +921,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <!-- Lock Screen -->
     <string name="lockscreen_auto_rotate_title">Rotation auto. de l\'écran de verr.</string>
     <string name="lockscreen_auto_rotate_summary">L\'écran de verrouillage aura la capacité de rotation par l\'intermédiaire du capteur d\'orientation de l\'appareil. Ceci est indépendant de la rotation automatique du reste du système.</string>
-    <string name="lockscreen_all_widgets_title">Permettre tous les widgets</string>
+    <string name="lockscreen_all_widgets_title">Autoriser tous les widgets</string>
     <string name="lockscreen_all_widgets_summary">*Attention* Certains widgets ne sont pas destinés à être utilisés sur l\'écran de verrouillage. Le développeur du widget, notre équipe, ne sont pas responsables de votre choix de widgets.</string>
     <string name="lockscreen_unlimited_widgets_title">Autoriser un nombre illimité de widgets</string>
     <string name="lockscreen_unlimited_widgets_summary">*Attention* Ajouter trop de widgets peut causer des problèmes de lenteur sur l\'écran de verrouillage.</string>
@@ -932,7 +932,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="screen_security_summary">Afficher ou modifier les paramètres de sécurité</string>
     
     <string name="additional_options_title">Déverrouillage</string>
-    <string name="unlock_menu_unlock_title">Déverrouillage par Menu</string>
+    <string name="unlock_menu_unlock_title">Déverrouillage par bouton Menu</string>
     <string name="unlock_menu_unlock_summary">Déverrouillage de l\'écran en appuyant sur le bouton Menu</string>
     <string name="unlock_home_unlock_title">Déverrouillage par bouton Accueil</string>
     <string name="unlock_home_unlock_summary">Déverrouillage de l\'écran en appuyant sur le bouton Accueil</string>
@@ -960,7 +960,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="lockscreen_vibrate_enabled_head">Vibrer lors du déverrouillage</string>
 
     <!--- Lock clock -->
-    <string name="dash_clock_title">Widget horloge</string>
+    <string name="dash_clock_title">Widget DashClock</string>
     <string name="dash_clock_summary">Afficher ou modifier la façon dont le widget DashClock est affiché sur l\'écran d\'accueil ou de verrouillage</string>
 
     <!-- Hybrid -->
