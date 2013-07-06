@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -77,6 +78,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String TAG = "General User Interface";
 
     private static final String PREF_SHOW_OVERFLOW = "show_overflow";
+    private static final String PREF_HARDWARE_KEYS = "hardware_keys";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_RECENTS_RAM_BAR = "recents_ram_bar";
@@ -89,6 +91,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final int TIMEOUT_DEFAULT = 5000; // 5s
 
     Preference mRamBar;
+    Preference mHardwareKeys;
     CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
@@ -111,9 +114,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         ContentResolver cr = mContext.getContentResolver();
 
         mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
-        mShowActionOverflow.setChecked(Settings.System.getBoolean(getActivity().
-                        getApplicationContext().getContentResolver(),
-                        Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
+        mShowActionOverflow.setChecked(Settings.System.getInt(cr,
+                Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1);
+
+        mHardwareKeys = (Preference) findPreference(PREF_HARDWARE_KEYS);
 
         // respect device default configuration
         // true fades while false animates
@@ -204,9 +208,9 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mShowActionOverflow) {
             boolean enabled = mShowActionOverflow.isChecked();
-            Settings.System.putBoolean(getContentResolver(),
-                    Settings.System.UI_FORCE_OVERFLOW_BUTTON, enabled ? true : false);
-            // Show toast appropriately
+            Settings.System.putInt(getContentResolver(), Settings.System.UI_FORCE_OVERFLOW_BUTTON,
+                    enabled ? 1 : 0);
+            // Show appropriate
             if (enabled) {
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
                         Toast.LENGTH_LONG).show();
@@ -243,6 +247,13 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.KEYBOARD_ROTATION_TIMEOUT,
                     mKeyboardRotationToggle.isChecked() ? TIMEOUT_DEFAULT : 0);
             updateRotationTimeout(TIMEOUT_DEFAULT);
+            return true;
+        } else if (preference == mHardwareKeys) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            HardwareKeys fragment = new HardwareKeys();
+            ft.addToBackStack("hardware_keys_binding");
+            ft.replace(this.getId(), fragment);
+            ft.commit();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

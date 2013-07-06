@@ -888,6 +888,40 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="ram_bar_button_help">Help</string>
     <string name="ram_bar_button_reset">Reset colors</string>
 
+    <!-- Hardware keys -->
+    <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_bindings_title">Key actions</string>
+    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
+    <string name="hardware_keys_home_press_title">Home key</string>
+    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
+    <string name="hardware_keys_back_press_title">Back key</string>
+    <string name="hardware_keys_back_long_press_title">Back key (long press)</string>
+    <string name="hardware_keys_menu_press_title">Menu key</string>
+    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
+    <string name="hardware_keys_assist_press_title">Search key</string>
+    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
+    <string name="hardware_keys_app_switch_press_title">App switch key</string>
+    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
+    <string name="hardware_keys_camera_press_title">Camera key</string>
+    <string name="hardware_keys_camera_long_press_title">Camera key (long press)</string>
+    <string name="hardware_keys_action_nothing">None</string>
+    <string name="hardware_keys_action_home">Home</string>
+    <string name="hardware_keys_action_back">Back</string>
+    <string name="hardware_keys_action_menu">Menu</string>
+    <string name="hardware_keys_action_app_switch">Recents</string>
+    <string name="hardware_keys_action_search">Search</string>
+    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="hardware_keys_action_power">Screen off</string>
+    <string name="hardware_keys_action_notifications">Notifications</string>
+    <string name="hardware_keys_action_expanded">Expanded desktop toggle</string>
+    <string name="hardware_keys_action_kill_app">Kill app</string>
+    <string name="hardware_keys_action_last_app">Last app</string>
+    <string name="hardware_keys_action_custom_app">Custom app</string>
+    <string name="hardware_keys_action_widgets">Widgets viewpager</string>
+    <string name="hardware_keys_action_quicksettings">Quicksettings panel</string>
+    <string name="hardware_keys_action_camera">Camera</string>
+
    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">Ribbon layout</string>
     <string name="ribbon_chooser_instructions">Select which Ribbon to setup.</string>

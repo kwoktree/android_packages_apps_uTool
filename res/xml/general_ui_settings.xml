@@ -78,8 +78,11 @@
         <CheckBoxPreference
             android:key="show_overflow"
             android:title="@string/show_overflow_title"
-            android:summary="@string/show_overflow_summary"
-            android:defaultValue="false" />
+            android:summary="@string/show_overflow_summary" />
+
+        <Preference
+            android:key="hardware_keys"
+            android:title="hardware_keys_title" />
 
         </PreferenceCategory>
 
