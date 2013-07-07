@@ -502,6 +502,7 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="both_collapse">Both click and long click</string>
 
     <!-- Tile background style and text color -->
+    <string name="custom_toggle_colors">Custom colors</string>
     <string name="tile_background_style_title">Tile background style</string>
     <string name="tile_background_style_summary">Lets you choose from random, color fill or default background for tiles</string>
     <string name="tile_background_color_title">Set tile background color</string>
