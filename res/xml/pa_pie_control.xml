@@ -14,6 +14,11 @@
             android:key="pie_controls"
             android:title="@string/enable_pie_title" />
 
+        <CheckBoxPreference
+            android:key="pie_status_expanded"
+            android:title="@string/pie_status_expanded_title"
+            android:summary="@string/pie_status_expanded_summary" />
+
         <ListPreference
             android:key="pie_trigger"
             android:dialogTitle="@string/pie_trigger_title"
@@ -52,12 +57,6 @@
             android:title="@string/pie_gravity_title"
             android:entries="@array/entries_pie_gravity"
             android:entryValues="@array/values_pie_gravity"
-            android:dependency="pie_controls" />
-
-        <CheckBoxPreference
-            android:key="pie_status_expanded"
-            android:title="@string/pie_status_expanded_title"
-            android:summary="@string/pie_status_expanded_summary"
             android:dependency="pie_controls" />
 
         <CheckBoxPreference
