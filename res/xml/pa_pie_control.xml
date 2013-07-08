@@ -55,6 +55,12 @@
             android:dependency="pie_controls" />
 
         <CheckBoxPreference
+            android:key="pie_status_expanded"
+            android:title="@string/pie_status_expanded_title"
+            android:summary="@string/pie_status_expanded_summary"
+            android:dependency="pie_controls" />
+
+        <CheckBoxPreference
             android:key="pie_stick"
             android:title="@string/pie_stick_title"
             android:summary="@string/pie_stick_summary"
