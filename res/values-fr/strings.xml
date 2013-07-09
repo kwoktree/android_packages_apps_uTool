@@ -178,15 +178,17 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     </string>
 
     <string name="quick_launch_shortcuts_title">Slim PIE</string>
-    <string name="quick_launch_shortcuts_summary">Agit comme une barre de navigation sans le Bureau étendu, avec beaucoup de personnalisation</string>
+    <string name="quick_launch_shortcuts_summary">Agit comme une barre de navigation sans le Bureau étendu, avec beaucoup de personnalisation.</string>
     <string name="pie_title">Paranoid PIE</string>
-    <string name="pie_summary">Agit comme une barre de navigation pour le Bureau étendu</string>
+    <string name="pie_summary">Agit comme une barre de navigation pour le Bureau étendu.</string>
     <string name="pie_toggle_behavior_title">Interrupteur du PIE</string>
 
     <!-- Paranoid PIE -->
     <string name="pie_controls_title">Contrôles du Pie</string>
     <string name="enable_pie_title">Paranoid PIE</string>
     <string name="pie_targets_title">Boutons</string>
+    <string name="pie_status_expanded_title">PIE désactivé en écran étendu</string>
+    <string name="pie_status_expanded_summary">Le Paranoid PIE ne sera pas affiché en bureau étendu ou sans la barre de navigation</string>
     <!-- The Gravity -->
     <string name="pie_gravity_title">Emplacement du PIE</string>
     <string name="pie_gravity_top">En haut</string>
@@ -467,6 +469,7 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="both_collapse">Les deux, long et court</string>
 
     <!-- Tile background style and text color -->
+    <string name="custom_toggle_colors">Couleurs personnalisées</string>
     <string name="tile_background_style_title">Style du fond des tuiles</string>
     <string name="tile_background_style_summary">Vous permet de choisir entre aléatoire, couleur de remplissage et fond par défaut.</string>
     <string name="tile_background_color_title">Couleur du fond des tuiles</string>
