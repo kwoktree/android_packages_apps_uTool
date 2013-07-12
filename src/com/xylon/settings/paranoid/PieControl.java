@@ -79,7 +79,6 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
     private static final String PIE_TRIGGER = "pie_trigger";
     private static final String PIE_ANGLE = "pie_angle";
     private static final String PIE_GAP = "pie_gap";
-    private static final String PIE_STATUS_EXPANDED = "pie_status_expanded";
     private static final String PIE_LASTAPP = "pie_lastapp";
     private static final String PIE_MENU = "pie_menu";
     private static final String PIE_SEARCH = "pie_search";
@@ -92,7 +91,6 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
     ListPreference mPieAngle;
     ListPreference mPieTrigger;
     ListPreference mPieGap;
-    CheckBoxPreference mPieStatusExpanded;
     CheckBoxPreference mPieMenu;
     CheckBoxPreference mPieLastApp;
     CheckBoxPreference mPieSearch;
@@ -112,25 +110,25 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mPieControls = (SwitchPreference) findPreference(PIE_CONTROLS);
-        mPieControls.setChecked((Settings.System.getInt(mContentAppRes,
+        mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_CONTROLS, 0) == 1));
         mPieControls.setOnPreferenceChangeListener(this);
 
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
-        int pieGravity = Settings.System.getInt(mContentAppRes,
+        int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_GRAVITY, 3);
         mPieGravity.setValue(String.valueOf(pieGravity));
         mPieGravity.setOnPreferenceChangeListener(this);
 
         mPieMode = (ListPreference) prefSet.findPreference(PIE_MODE);
-        int pieMode = Settings.System.getInt(mContentAppRes,
+        int pieMode = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_MODE, 2);
         mPieMode.setValue(String.valueOf(pieMode));
         mPieMode.setOnPreferenceChangeListener(this);
 
         mPieTrigger = (ListPreference) prefSet.findPreference(PIE_TRIGGER);
         try {
-            float pieTrigger = Settings.System.getFloat(mContentAppRes,
+            float pieTrigger = Settings.System.getFloat(mContext.getContentResolver(),
                     Settings.System.PIE_TRIGGER);
             mPieTrigger.setValue(String.valueOf(pieTrigger));
         } catch(Settings.SettingNotFoundException ex) {
@@ -142,39 +140,35 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
         mPieSize.setOnPreferenceChangeListener(this);
 
         mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
-        int pieGap = Settings.System.getInt(mContentAppRes,
+        int pieGap = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_GAP, 3);
         mPieGap.setValue(String.valueOf(pieGap));
         mPieGap.setOnPreferenceChangeListener(this);
 
         mPieAngle = (ListPreference) prefSet.findPreference(PIE_ANGLE);
-        int pieAngle = Settings.System.getInt(mContentAppRes,
+        int pieAngle = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_ANGLE, 12);
         mPieAngle.setValue(String.valueOf(pieAngle));
         mPieAngle.setOnPreferenceChangeListener(this);
 
-        mPieStatusExpanded = (CheckBoxPreference) prefSet.findPreference(PIE_STATUS_EXPANDED);
-        mPieStatusExpanded.setChecked(Settings.System.getInt(mContentAppRes,
-                Settings.System.PIE_STATUS_EXPANDED, 0) == 1);
-
         mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
-        mPieMenu.setChecked(Settings.System.getInt(mContentAppRes,
+        mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_MENU, 1) == 1);
 
         mPieLastApp = (CheckBoxPreference) prefSet.findPreference(PIE_LASTAPP);
-        mPieLastApp.setChecked(Settings.System.getInt(mContentAppRes,
+        mPieLastApp.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_LAST_APP, 1) == 1);
 
         mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
-        mPieSearch.setChecked(Settings.System.getInt(mContentAppRes,
+        mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_SEARCH, 1) == 1);
 
         mPieCenter = (CheckBoxPreference) prefSet.findPreference(PIE_CENTER);
-        mPieCenter.setChecked(Settings.System.getInt(mContentAppRes,
+        mPieCenter.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_CENTER, 1) == 1);
 
         mPieStick = (CheckBoxPreference) prefSet.findPreference(PIE_STICK);
-        mPieStick.setChecked(Settings.System.getInt(mContentAppRes,
+        mPieStick.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_STICK, 1) == 1);
     }
 
@@ -189,9 +183,6 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
         if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
-        } else if (preference == mPieStatusExpanded) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.PIE_STATUS_EXPANDED, mPieStatusExpanded.isChecked() ? 1 : 0);
         } else if (preference == mPieLastApp) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_LAST_APP, mPieLastApp.isChecked() ? 1 : 0);

@@ -206,9 +206,6 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="pie_controls_title">Controls</string>
     <string name="enable_pie_title">Enable pie</string>
     <string name="pie_targets_title">Targets</string>
-    <!-- Status Expanding -->
-    <string name="pie_status_expanded_title">Disable PIE on expanding</string>
-    <string name="pie_status_expanded_summary">PIE will be not used on expanded or navbar zero.</string>
     <!-- Gravity -->
     <string name="pie_gravity_title">Pie gravity</string>
     <string name="pie_gravity_summary">Select the location where you can bring up PIE</string>
