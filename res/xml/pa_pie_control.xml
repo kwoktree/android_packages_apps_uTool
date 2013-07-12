@@ -14,11 +14,6 @@
             android:key="pie_controls"
             android:title="@string/enable_pie_title" />
 
-        <CheckBoxPreference
-            android:key="pie_status_expanded"
-            android:title="@string/pie_status_expanded_title"
-            android:summary="@string/pie_status_expanded_summary" />
-
         <ListPreference
             android:key="pie_trigger"
             android:dialogTitle="@string/pie_trigger_title"
