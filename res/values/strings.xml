@@ -375,6 +375,8 @@ Paranoid PIE control is wavely based on simple navigation to expanded desktop. S
     <string name="halo_bubble_text_color_title">Speech bubble text color</string>
     <string name="halo_effect_color_title">Effect color</string>
     <string name="halo_effect_color_summary">Requires a systemui restart</string>
+    <string name="halo_size_title">HALO size</string>
+    <string name="halo_size_summary">Defines how big HALO is going to be</string>
 
     <!-- Battery style -->
     <string name="battery_icon_title">Battery style</string>

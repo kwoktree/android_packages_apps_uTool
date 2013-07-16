@@ -120,6 +120,11 @@
             android:dependency="halo_enabled"
             android:summary="@string/halo_pause_summary" />
 
+        <com.xylon.settings.widgets.SeekBarPreference
+            android:key="halo_size"
+            android:title="@string/halo_size_title"
+            android:summary="@string/halo_size_summary" />
+
         <CheckBoxPreference
             android:key="halo_colors"
             android:title="@string/halo_colors_title"

@@ -78,6 +78,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     private static final String PREF_HALO_HIDE = "halo_hide";
     private static final String PREF_HALO_REVERSED = "halo_reversed";
     private static final String PREF_HALO_PAUSE = "halo_pause";
+    private static final String PREF_HALO_SIZE = "halo_size";
     private static final String PREF_HALO_COLORS = "halo_colors";
     private static final String PREF_HALO_CIRCLE_COLOR = "halo_circle_color";
     private static final String PREF_HALO_EFFECT_COLOR = "halo_effect_color";
@@ -129,12 +130,17 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     ListPreference mNotificationsBeh;
     CheckBoxPreference mStatusBarQuickPeek;
     ListPreference mStatusBarBeh;
+    SeekBarPreference mHaloSize;
 
     String mCustomLabelText = null;
 
     private int seekbarProgress;
     private static int mBarBehaviour;
     private INotificationManager mNotificationManager;
+
+    private static final float HALO_SIZE_MIN = 0.6f;
+    private static final float HALO_SIZE_MAX = 1.6f;
+    private static final float HALO_SIZE_DEFAULT = 1.0f;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -165,6 +171,9 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mHaloReversed = (CheckBoxPreference) prefSet.findPreference(PREF_HALO_REVERSED);
         mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_REVERSED, 1) == 1);
+
+        mHaloSize = (SeekBarPreference) prefSet.findPreference(PREF_HALO_SIZE);
+        mHaloSize.setOnPreferenceChangeListener(this);
 
         mHaloColors = (CheckBoxPreference) prefSet.findPreference(PREF_HALO_COLORS);
         mHaloColors.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -250,6 +259,12 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
             mStatusBarBeh.setEnabled(false);
         } else {
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateValues();
     }
 
     private void updateCustomLabelTextSummary() {
@@ -538,6 +553,14 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
                 // System dead
             }          
             return true;
+        } else if (preference == mHaloSize) {
+            float val = Float.parseFloat((String) newValue);
+            float value = (val * ((HALO_SIZE_MAX - HALO_SIZE_MIN) /
+                100)) + HALO_SIZE_MIN;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.HALO_SIZE,
+                    value);
+            return true;
         }
 
         return false;
@@ -789,5 +812,21 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
             getActivity().getSharedPreferences("transparency", Context.MODE_PRIVATE).edit()
                     .putBoolean("link", v).commit();
         }
+    }
+
+    private void updateValues() {
+        float haloSize;
+        try{
+            haloSize = Settings.System.getFloat(getActivity()
+                    .getContentResolver(), Settings.System.HALO_SIZE);
+        } catch (Exception e) {
+            haloSize = HALO_SIZE_DEFAULT;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.HALO_SIZE, haloSize);
+        }
+        float haloSizeValue = ((haloSize - HALO_SIZE_MIN) /
+                    ((HALO_SIZE_MAX - HALO_SIZE_MIN) / 100)) / 100;
+        mHaloSize.setInitValue((int) (haloSizeValue * 100));
+        mHaloSize.disablePercentageValue(true);
     }
 }
