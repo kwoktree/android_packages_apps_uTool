@@ -355,6 +355,8 @@ Le Paranoid PIE est basé uniquement sur une navigation en mode Bureau étendu, 
     <string name="halo_bubble_text_color_title">Couleur du texte de la bulle</string>
     <string name="halo_effect_color_title">Couleur de l\'effet</string>
     <string name="halo_effect_color_summary">Redémarrage de l\'interface nécessaire</string>
+    <string name="halo_size_title">Taille du cercle</string>
+    <string name="halo_size_summary">Définir de quelle taille doit être le cercle</string>
 
     <!-- Battery style -->
     <string name="battery_icon_title">Style de batterie</string>
