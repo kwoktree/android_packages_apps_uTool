@@ -18,11 +18,9 @@
 
     <style name="Theme.CreateShortCut" parent="android:Theme.Holo.DialogWhenLarge" />
     <style name="Settings" parent="android:Theme.Holo.Light">
-        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="drawer_background">@drawable/drawer_background</item>
+        <item name="drawer_shadow">@drawable/drawer_shadow</item>
+        <item name="ic_drawer">@drawable/ic_drawer</item>
     </style>
 
-    <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse"> 
-        <item name="android:background">@drawable/ab_background</item>
-    </style>
-    
 </resources>

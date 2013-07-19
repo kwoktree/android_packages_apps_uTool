@@ -12,6 +12,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -36,6 +41,7 @@ import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.xylon.settings.R;
 
 public class XYSettingsActivity extends PreferenceDrawerActivity implements ButtonBarHandler {
 
@@ -118,8 +124,13 @@ public class XYSettingsActivity extends PreferenceDrawerActivity implements Butt
             }
         }
         ActionBar actionBar = getActionBar();
+        BitmapDrawable background = new BitmapDrawable(BitmapFactory
+                .decodeResource(getResources(), R.drawable.ab_background));
+        background.setTileModeX(Shader.TileMode.CLAMP);
+        actionBar.setBackgroundDrawable(background);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(false);
 
     }
 

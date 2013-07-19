@@ -16,6 +16,10 @@
 
 <resources>
 
-    <style name="Settings" parent="android:Theme.Holo" />
+    <style name="Settings" parent="android:Theme.Holo" >
+        <item name="drawer_background">@drawable/drawer_background</item>
+        <item name="drawer_shadow">@drawable/drawer_shadow</item>
+        <item name="ic_drawer">@drawable/ic_drawer</item>
+    </style>
     
 </resources>

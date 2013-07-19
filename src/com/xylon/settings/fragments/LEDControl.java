@@ -48,10 +48,10 @@ import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.Spinner;
 import android.widget.Switch;
 
-import com.xylon.settings.R;
-
 import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
+import com.xylon.settings.R;
+import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.util.Helpers;
 import com.xylon.settings.util.ShortcutPickerHelper;
 
@@ -62,7 +62,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class LEDControl extends Fragment implements ColorPickerDialog.OnColorChangedListener,
+public class LEDControl extends SettingsPreferenceFragment implements ColorPickerDialog.OnColorChangedListener,
         ShortcutPickerHelper.OnPickListener {
 
     private static final String TAG = "LEDControl";
