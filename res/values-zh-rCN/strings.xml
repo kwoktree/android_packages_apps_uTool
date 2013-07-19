@@ -12,7 +12,7 @@
     <string name="save">保存</string>
     <string name="reset">重置</string>
     <string name="empty">空白</string>
-    <string name="general_ui">常规</string>
+    <string name="general_ui">常规界面</string>
     <string name="battery">电池</string>
     <string name="clock">时钟</string>
     <string name="signal">信号</string>
@@ -110,10 +110,11 @@
     <string name="set">设置</string>
 
     <!-- Power Menu -->
-    <string name="title_show_screenshot">显示屏幕截图</string>
-    <string name="title_show_airplane_toggle">显示飞行模式</string>
+    <string name="title_show_profiles">情景模式</string>    
+    <string name="title_show_screenshot">屏幕截图</string>
+    <string name="title_show_airplane_toggle">飞行模式</string>
     <string name="title_show_torch_toggle">手电筒</string>
-    <string name="power_menu_expanded_desktop">显示全屏开关</string>
+    <string name="power_menu_expanded_desktop">桌面全屏</string>
     <string name="expanded_desktop_cat">高级设置</string>
     <string name="expanded_desktop_summary_status_bar">状态栏可见</string>
     <string name="expanded_desktop_summary_no_status_bar">状态栏隐藏</string>
@@ -122,7 +123,7 @@
     <string name="expanded_desktop_status_bar">状态栏可见</string>
     <string name="expanded_desktop_no_status_bar">状态栏隐藏</string>
     <string name="title_show_navbar_hide">显示导航开关</string>
-    <string name="title_show_reboot_keyguard">锁屏界面开启重启菜单</string>
+    <string name="title_show_reboot_keyguard">锁屏下显示重启</string>
     <string name="title_show_power_keyguard">锁屏下显示关机</string>
 
     <!-- Status Bar Headers -->
@@ -171,50 +172,73 @@
     <string name="lowercase">小写</string>
     <string name="uppercase">大写</string>
 
+    <!-- Quick/Pie Control -->
+    <string name="pie_help_title">帮助</string>
+    <string name="pie_help_text"><b>What is the difference between Paranoid or Slim PIE?</b>
+\n\n
+Paranoid PIE 是扩展桌面的基础上简单的导航。 Slim PIE 是一个可自定义强更易于使用的导航。
+\n\n\n
+<b>Copyright (C) 2013 The Ultimatum Project.</b>
+    </string>
+
+    <string name="quick_launch_shortcuts_title">Slim PIE</string>
+    <string name="quick_launch_shortcuts_summary">用起来像一个导航，没有扩展桌面，可以自定义更多设置</string>
+    <string name="pie_title">Paranoid PIE</string>
+    <string name="pie_summary">通过扩展桌面体验的PIE控制</string>
+    <string name="pie_toggle_behavior_title">PIE 切换</string>
+    <string name="pie_toggle_paranoid">Paranoid PIE</string>
+    <string name="pie_toggle_slim">Slim PIE</string>
+    
+    <!-- Paranoid PIE -->
     <string name="pie_controls_title">PIE控制</string>
     <string name="enable_pie_title">启用PIE</string>
     <string name="pie_targets_title">目标</string>
-    <!-- The Gravity -->
+    <!-- Gravity -->
     <string name="pie_gravity_title">PIE位置</string>
+    <string name="pie_gravity_summary">您可以选择PIE的位置</string>
     <string name="pie_gravity_top">顶部</string>
     <string name="pie_gravity_bottom">底部</string>
     <string name="pie_gravity_right">右侧</string>
     <string name="pie_gravity_left">左侧</string>
-    <!-- The Mode -->
-    <string name="pie_mode_title">PIE样式</string>
+    <!-- Mode -->
+    <string name="pie_mode_title">PIE速度/样式</string>
     <string name="pie_mode_bare">空</string>
     <string name="pie_mode_quick">快速</string>
     <string name="pie_mode_default">默认</string>
     <string name="pie_mode_slow">慢速</string>
-    <!-- The Size -->
+    <!-- Size -->
     <string name="pie_size_title">PIE大小</string>
-    <string name="pie_size_small">小</string>
-    <string name="pie_size_large">大</string>
-    <string name="pie_size_gigantic">特大</string>
-    <!-- The Gap -->
+    <!-- Angle -->
+    <string name="pie_angle_title">底角大小</string>
+    <string name="pie_angle_none">无</string>
+    <string name="pie_angle_small">小</string>
+    <string name="pie_angle_normal">正常(默认)</string>
+    <string name="pie_angle_big">大</string>
+    <string name="pie_angle_huge">特大</string>
+    <!-- Gap -->
     <string name="pie_gap_title">PIE间距</string>
     <string name="pie_gap_none">无</string>
     <string name="pie_gap_small">小</string>
     <string name="pie_gap_big">大</string>
     <string name="pie_gap_huge">特大(默认)</string>
-    <!-- The trigger -->
-    <string name="pie_trigger_title">触发区</string>
+    <!-- Trigger area -->
+    <string name="pie_trigger_title">触发区域</string>
     <string name="pie_trigger_small">小</string>
     <string name="pie_trigger_normal">正常(默认)</string>
     <string name="pie_trigger_big">大</string>
     <string name="pie_trigger_huge">特大</string>
+    <!-- Misc -->
     <string name="pie_restart_launcher_title">重启启动器</string>
-    <string name="pie_restart_launcher_summary">这个操作会重启启动器，可能会导致屏幕显示有误。有些桌面部件也可能会出问题，小心使用。</string>
-    <!-- The Loner -->
+    <string name="pie_restart_launcher_summary">这个操作会重启启动器，可能会导致屏幕显示有误。有些桌面部件也可能会出问题，请小心使用。</string>
     <string name="pie_menu_title">菜单按钮</string>
     <string name="pie_menu_summary">总是显示MENU键</string>
     <string name="pie_search_title">搜索按钮</string>
     <string name="pie_search_summary">在PIE中开启搜索按键</string>
     <string name="pie_lastapp_title">最后应用</string>
-    <string name="pie_lastapp_summary">在PIE中开启最后应用键</string>
+    <string name="pie_lastapp_summary">在PIE中开启最后应用按键</string>
     <string name="pie_center_title">中间对齐</string>
     <string name="pie_center_summary">在屏幕中间的位置激活PIE</string>
-    <string name="pie_stick_title">防止旋转</string>
+    <string name="pie_stick_title">防止旋转n</string>
     <string name="pie_stick_summary">选中此项PIE不会跟随重力改变位置</string>
     <!-- The Colors -->
     <string name="pie_color_title">PIE 颜色设置</string>
@@ -228,7 +252,7 @@
     <string name="pie_chevron_right_title">右轮廓条颜色</string>
     <string name="pie_juice_title">电池轮廓颜色</string>
     
-    <!-- SlimPIE -->
+    <!-- Slim PIE -->
     <string name="pie_control_title">启用PIE</string>
     <string name="pie_control_always">总是显示</string>
     <string name="pie_control_expanded">扩展模式</string>
@@ -317,8 +341,9 @@
     <string name="pie_action_power">关闭屏幕</string>
     <string name="pie_action_notifications">通知</string>
     <string name="pie_action_none">无</string>
-    
     <string name="color_default">默认</string>
+    
+    <!-- HALO -->    
     <string name="halo_cat">HALO</string>
     <string name="halo_hide_title">自动隐藏 HALO 通知</string>
     <string name="halo_hide_summary">悬浮窗 HALO 将在有消息通知时自动显示，并在一定时间后自动隐藏</string>
@@ -330,9 +355,16 @@
     <string name="halo_state_white">白名单</string>
     <string name="halo_pause_title">暂停活动的应用程序</string>
     <string name="halo_pause_summary">当HALO打开一个应用程序与底层的应用程序将暂停</string>
-    <string name="halo_style_title">HALO极简风格</string>
-    <string name="halo_style_summary">HALO设置时的不同风格</string>
-
+    <string name="halo_colors_title">颜色选择</string>
+    <string name="halo_colors_summary">HALO 颜色设置</string>
+    <string name="halo_circle_color_title">圆圈颜色</string>
+    <string name="halo_bubble_color_title">气泡颜色</string>
+    <string name="halo_bubble_text_color_title">气泡文本颜色</string>
+    <string name="halo_effect_color_title">效果颜色</string>
+    <string name="halo_effect_color_summary">需要重启系统UI</string>
+    <string name="halo_size_title">HALO 大小</string>
+    <string name="halo_size_summary">定义HALO的大小</string>
+    
     <!-- Battery style -->
     <string name="battery_icon_title">电量样式</string>
     <string name="icon_only">图标</string>
@@ -458,6 +490,30 @@
     <string name="long_collapse">长按时</string>
     <string name="both_collapse">点击或长按时</string>
 
+    <!-- Tile background style and text color -->
+    <string name="custom_toggle_colors">颜色选择</string>
+    <string name="tile_background_style_title">磁贴风格</string>
+    <string name="tile_background_style_summary">让你在随机，颜色填充，和默认背景中做出选择</string>
+    <string name="tile_background_color_title">设置磁贴背景颜色</string>
+    <string name="tile_background_pressed_color_title">设置磁贴选中背景色</string>
+    <string name="tile_background_random">随机颜色</string>
+    <string name="tile_background_color_fill">颜色填充</string>
+    <string name="tile_background_default">默认背景</string>
+    <string name="tile_custom_background_dialog_title">磁贴风格</string>
+    <string name="tile_text_color_title">设置磁贴字体颜色</string>
+
+    <!-- Random colors -->
+    <string name="random_colors">随机颜色</string>
+    <string name="random_colors_title">设置随机颜色</string>
+    <string name="random_colors_summary">允许自行选择随机颜色</string>
+    <string name="random_colors_reset_title">重置随机颜色</string>
+    <string name="color_one">颜色一</string>
+    <string name="color_two">颜色二</string>
+    <string name="color_three">颜色三</string>
+    <string name="color_four">颜色四</string>
+    <string name="color_five">颜色五</string>
+    <string name="color_six">颜色六</string>
+    
      <!-- Brightness slider -->
     <string name="on_top">在顶部</string>
     <string name="on_the_bottom">在底部</string>
@@ -472,7 +528,7 @@
     <string name="toggle_swagger">无用</string>
     <string name="toggle_sync">同步</string>
     <string name="toggle_torch">手电</string>
-    <string name="toggle_usb_tether">USB绑定</string>
+    <string name="toggle_usb_tether">USB热点共享</string>
     <string name="toggle_vibrate">振动</string>
     <string name="toggle_wifi_tether">便携式热点</string>
     <string name="toggle_user">用户</string>
@@ -661,18 +717,19 @@
     <string name="navbar_icon_menu">自定义图标</string>
     <string name="navbar_delete_menu">删除虚拟键</string>
 
-    <string name="statusbar_behaviour">状态栏行为</string>
+    <string name="statusbar_behaviour">状态栏样式</string>
     <string name="statusbar_visible">显示状态栏</string>
 
-    <!-- Hide Status Bar -->
-    <string name="statusbar_hide_title">隐藏状态栏</string>
-
-    <!-- Hidden Statusbar Pulldown -->
-    <string name="statusbar_hide_summary">选择状态栏行为</string>
-    <string name="statusbar_notification">通知栏</string>
-    <string name="statusbar_pulldown">下拉状态栏</string>
-    <string name="statusbar_pulldown_notification">下拉和通知栏</string>
-    <string name="hidden_statusbar_pulldown_timeout_summary">超时后隐藏状态栏</string>
+    <!-- Statusbar Quick Peek -->
+    <string name="statusbar_quick_peek_title">快速预览</string>
+    <string name="statusbar_quick_peek_summary">从屏幕上方下拉可以快速预览隐藏在状态栏的通知内容</string>
+    
+    <!-- Statusbar behaviour -->
+    <string name="statusbar_behaviour_title">状态栏样式</string>
+    <string name="statusbar_behaviour_summary">在三种不同的状态栏中切换</string>
+    <string name="statusbar_show">现实状态栏</string>
+    <string name="statusbar_hide">隐藏状态栏</string>
+    <string name="statusbar_auto">自动隐藏状态栏</string>
 
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">导航栏插件</string>
@@ -727,6 +784,7 @@
     <string name="status_icon_color_title">状态图标颜色</string>
 
     <!-- General UI | Other Modifications unknown -->
+
     <string name="custom_carrier_label_title">自定义运营商</string>
     <string name="custom_carrier_label_explain">请输入一个新的商标，留空表示恢复默认商标</string>
     <string name="custom_carrier_label_notset">自定义运营商当前没有被设置</string>
@@ -797,7 +855,41 @@
     <string name="ram_bar_color_enabled">已启用</string>
     <string name="ram_bar_color_disabled">已禁用</string>
     <string name="ram_bar_button_help">帮助</string>
-    <string name="ram_bar_button_reset">充值颜色</string>
+    <string name="ram_bar_button_reset">重置颜色</string>
+
+    <!-- Hardware keys -->
+    <string name="hardware_keys_title">硬件按键</string>
+    <string name="hardware_keys_bindings_title">按键行为</string>
+    <string name="hardware_keys_enable_custom_title">开启自定义行为</string>
+    <string name="hardware_keys_home_press_title">主页键</string>
+    <string name="hardware_keys_home_long_press_title">主页键(长按)</string>
+    <string name="hardware_keys_back_press_title">返回键</string>
+    <string name="hardware_keys_back_long_press_title">返回键(长按)</string>
+    <string name="hardware_keys_menu_press_title">菜单键</string>
+    <string name="hardware_keys_menu_long_press_title">菜单键(长按)</string>
+    <string name="hardware_keys_assist_press_title">搜索键</string>
+    <string name="hardware_keys_assist_long_press_title">搜索键(长按)</string>
+    <string name="hardware_keys_app_switch_press_title">开关键</string>
+    <string name="hardware_keys_app_switch_long_press_title">开关键(长按)</string>
+    <string name="hardware_keys_camera_press_title">相机键</string>
+    <string name="hardware_keys_camera_long_press_title">相机键(长按)</string>
+    <string name="hardware_keys_action_nothing">无</string>
+    <string name="hardware_keys_action_home">主页</string>
+    <string name="hardware_keys_action_back">返回</string>
+    <string name="hardware_keys_action_menu">菜单</string>
+    <string name="hardware_keys_action_app_switch">最近运行</string>
+    <string name="hardware_keys_action_search">搜索</string>
+    <string name="hardware_keys_action_voice_search">语音搜索</string>
+    <string name="hardware_keys_action_in_app_search">在应用中搜索</string>
+    <string name="hardware_keys_action_power">关闭屏幕</string>
+    <string name="hardware_keys_action_notifications">通知</string>
+    <string name="hardware_keys_action_expanded">扩展桌面</string>
+    <string name="hardware_keys_action_kill_app">杀进程</string>
+    <string name="hardware_keys_action_last_app">最近应用</string>
+    <string name="hardware_keys_action_custom_app">自定义应用</string>
+    <string name="hardware_keys_action_widgets">小部件</string>
+    <string name="hardware_keys_action_quicksettings">快速设置面板</string>
+    <string name="hardware_keys_action_camera">相机</string>
     
    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">布局</string>
@@ -872,6 +964,7 @@
     <string name="led_keep_app">保留</string>
     <string name="led_custom_title">自定义LED应用</string>
     <string name="led_custom_message">你想改变的应用程序：</string>
+    <string name="led_edit_button">X</string>    
     <string name="led_test_notification">测试LED</string>
     <string name="led_test_notification_message_now">现在测试LED:</string>
     <string name="led_test_notification_message_note">请关闭您的屏幕上看LED，直到你查看LED颜色结束前不要点击弹出窗口的”确定“</string>
@@ -955,6 +1048,7 @@
     <string name="screen_security_category">屏幕保护</string>
     <string name="screen_security_title">锁屏</string>
     <string name="screen_security_summary">查看或更改屏幕锁定安全，延迟和超时的设置</string>
+
     <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
     <string name="lockscreen_target_info">拖拽解锁来设置快捷方式</string>
     <string name="lockscreen_target_title">锁屏快捷方式</string>
@@ -1026,6 +1120,7 @@
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">振动</string>
     <string name="lockscreen_vibrate_enabled_head">当正在解锁的时候振动</string>
+
     <!--- Dash clock -->
     <string name="dash_clock_title">时钟部件</string>
     <string name="dash_clock_summary">"查看并更改 DashClock 如何在桌面和锁屏小部件上显示"</string>

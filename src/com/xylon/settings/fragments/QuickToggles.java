@@ -69,6 +69,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
@@ -104,6 +105,8 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     private final int PICK_CONTACT = 1;
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
+
+    private static boolean mTogglesAreSorted = false;
 
     private Resources mResources;
     private PackageManager mPackMan;
@@ -184,13 +187,12 @@ public class QuickToggles extends SettingsPreferenceFragment implements
 
         mTogglesPerRow = (ListPreference) findPreference(PREF_TOGGLES_PER_ROW);
         mTogglesPerRow.setOnPreferenceChangeListener(this);
-        mTogglesPerRow.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+        mTogglesPerRow.setValue(Settings.System.getInt(mContentRes,
                 Settings.System.QUICK_TOGGLES_PER_ROW, 3) + "");
 
         mTogglesStyle = (ListPreference) findPreference(PREF_TOGGLES_STYLE);
         mTogglesStyle.setOnPreferenceChangeListener(this);
-        mTogglesStyle.setValue(String.valueOf(Settings.System.getInt(getActivity()
-                .getContentResolver(),
+        mTogglesStyle.setValue(String.valueOf(Settings.System.getInt(mContentRes,
                 Settings.System.TOGGLES_STYLE, 0)));
 
         mLayout = findPreference("toggles");
@@ -202,7 +204,7 @@ public class QuickToggles extends SettingsPreferenceFragment implements
 
         mChooseFastToggleSide = (ListPreference) findPreference(PREF_CHOOSE_FASTTOGGLE_SIDE);
         mChooseFastToggleSide.setOnPreferenceChangeListener(this);
-        mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+        mChooseFastToggleSide.setValue(Settings.System.getInt(mContentRes,
                 Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
 
         mScreenshotDelay = (ListPreference) findPreference(PREF_SCREENSHOT_DELAY);
@@ -253,6 +255,7 @@ public class QuickToggles extends SettingsPreferenceFragment implements
 
         if (Integer.parseInt(mTogglesStyle.getValue()) > 1) {
             mFastToggle.setEnabled(false);
+            mTogglesPerRow.setEnabled(false);
         }
 
         new SettingsObserver(new Handler()).observe();
@@ -296,11 +299,9 @@ public class QuickToggles extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        boolean result = false;
-
         if (preference == mTogglesPerRow) {
             int val = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContentRes,
                     Settings.System.QUICK_TOGGLES_PER_ROW, val);
         } else if (preference == mCollapseAll) {
             boolean val = (Boolean) newValue;
@@ -310,10 +311,11 @@ public class QuickToggles extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mTogglesStyle) {
             int val = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContentRes,
                     Settings.System.TOGGLES_STYLE, val);
             mTogglesStyle.setValue((String) newValue);
             mFastToggle.setEnabled(val > 1 ? false : true);
+            mTogglesPerRow.setEnabled(val > 1 ? false : true);
             Helpers.restartSystemUI();
         } else if (preference == mScreenshotDelay) {
             int val = Integer.parseInt((String) newValue);
@@ -322,14 +324,13 @@ public class QuickToggles extends SettingsPreferenceFragment implements
             mScreenshotDelay.setValue((String) newValue);
         } else if (preference == mFastToggle) {
             boolean val = (Boolean) newValue;
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContentRes,
                     Settings.System.FAST_TOGGLE, val);
-            getActivity().getBaseContext().getContentResolver()
-                    .notifyChange(Settings.System.getUriFor(Settings.System.FAST_TOGGLE), null);
+            mContentRes.notifyChange(Settings.System.getUriFor(Settings.System.FAST_TOGGLE), null);
             return true;
         } else if (preference == mChooseFastToggleSide) {
             int val = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContentRes,
                     Settings.System.CHOOSE_FASTTOGGLE_SIDE, val);
             mContentRes.notifyChange(
                     Settings.System.getUriFor(Settings.System.CHOOSE_FASTTOGGLE_SIDE), null);
@@ -429,7 +430,7 @@ public class QuickToggles extends SettingsPreferenceFragment implements
             }
             if (!anyChecked) {
                 // no toggles are checked, wipe the setting to be sure
-                Settings.System.putString(getContentResolver(), Settings.System.QUICK_TOGGLES, "");
+                Settings.System.putString(mContentRes, Settings.System.QUICK_TOGGLES, "");
             }
 
             builder.setTitle(R.string.toggles_display_dialog);
@@ -791,7 +792,7 @@ public class QuickToggles extends SettingsPreferenceFragment implements
                         if (cursor.moveToFirst()) {
                             String lookup_key = cursor.getString(cursor
                                     .getColumnIndex(ContactsContract.Contacts.LOOKUP_KEY));
-                            Settings.System.putString(getActivity().getContentResolver(),
+                            Settings.System.putString(mContentRes,
                                     Settings.System.QUICK_TOGGLE_FAV_CONTACT, lookup_key);
                         }
                     } finally {
@@ -888,6 +889,10 @@ public class QuickToggles extends SettingsPreferenceFragment implements
             for (String toggle : splitter) {
                 userEnabledToggles.add(toggle);
             }
+            if (!mTogglesAreSorted) {
+                Collections.sort(userEnabledToggles);
+                mTogglesAreSorted = true;
+            }
             return userEnabledToggles;
         } catch (Exception e) {
             if (sToggles != null && sToggles.containsKey("default_toggles")) {
@@ -907,8 +912,10 @@ public class QuickToggles extends SettingsPreferenceFragment implements
             b.append(_toggle);
             b.append("|");
         }
-        if (String.valueOf(b.charAt(b.length() - 1)).equals("!")) {
-            b.deleteCharAt(b.length() - 1);
+        if (b.length() > 0) {
+            if (b.charAt(b.length() - 1) == '!') {
+                b.deleteCharAt(b.length() - 1);
+            }
         }
         Log.d(TAG, "saving toggles:" + b.toString());
         Settings.System.putString(c.getContentResolver(), Settings.System.QUICK_TOGGLES,
