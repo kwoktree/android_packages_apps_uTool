@@ -238,7 +238,7 @@ Paranoid PIE 是扩展桌面的基础上简单的导航。 Slim PIE 是一个可
     <string name="pie_lastapp_summary">在PIE中开启最后应用按键</string>
     <string name="pie_center_title">中间对齐</string>
     <string name="pie_center_summary">在屏幕中间的位置激活PIE</string>
-    <string name="pie_stick_title">防止旋转n</string>
+    <string name="pie_stick_title">防止旋转</string>
     <string name="pie_stick_summary">选中此项PIE不会跟随重力改变位置</string>
     <!-- The Colors -->
     <string name="pie_color_title">PIE 颜色设置</string>
@@ -651,7 +651,7 @@ Paranoid PIE 是扩展桌面的基础上简单的导航。 Slim PIE 是一个可
     <string name="five_targets">5个目标</string>
     <string name="always_show_invincible_icons">总是隐藏图标</string>
     <string name="always_show">总是显示图标</string>
-    <string name="default_jb_with_invincible_icons_when_hidden">默认JB模式不可用隐藏</string>
+    <string name="default_jb_with_invinpie_stick_titlecible_icons_when_hidden">默认JB模式不可用隐藏</string>
     <string name="navbar_action_ime">打开输入法切换器</string>
     <string name="navbar_action_lastapp">最后应用</string>
     <string name="glow_times_off">关闭</string>
@@ -893,7 +893,7 @@ Paranoid PIE 是扩展桌面的基础上简单的导航。 Slim PIE 是一个可
     
    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">布局</string>
-    <string name="ribbon_chooser_instructions">选择操作区设置。</string>
+    <string name="ribbon_chooser_instructions">选择操作区设置</string>
     <string name="ribbon_instructions">点击图示新增或删除动作</string>
     <string name="ribbon_targets_cat">操作区条设定</string>
     <string name="enable_ribbon_text_title">显示捷径名称</string>
